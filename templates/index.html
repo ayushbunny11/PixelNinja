@@ -1,0 +1,125 @@
+{% extends "base.html" %} {% block content %}
+
+<h3>Upload Image</h3>
+
+<div>
+    <!-- 
+       IMAGE UPLOADING FORM
+    -->
+
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Choose...
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+
+    <!-- 
+       IMAGE DISPLAY
+    -->
+
+
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+
+
+        <div class="d-grid gap-2 d-md-block" style="padding-bottom: 17px;">
+            <div>
+                <button type="button" class="btn btn-outline-success btn-lg " id="btn-predict">Start
+                    Processing!</button>
+
+                <div class="imageRes">
+                    <div class="img-preview">
+                        <img id="result-image" alt="Resulted Image" />
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-outline-success btn-lg " id="btn-download">Download!</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 
+        UPLOADER DESIGN
+    -->
+    <div class="loader"></div>
+
+
+    <!-- 
+        Process Explanation
+     -->
+
+    <div style="margin-bottom:59px!important">
+        <div class="border border-success p-2 mb-2">
+            <p style="font-size: 22; margin-bottom: 0;">
+                Hello there! Looks like you are confused <span><a href="https://www.freepnglogos.com/pics/spongebob"
+                        title="Image from freepnglogos.com"><img
+                            src="https://www.freepnglogos.com/uploads/spongebob-png/spongebob-transparent-png-pictures-icons-and-png-35.png"
+                            width=25 alt="spongebob transparent png pictures icons and png" /></a></span>. If you want
+                to
+                know how to run this thing, click the below button!
+
+                <br>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary btn-lg" id="learn-button" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">
+                    Learn!
+                </button>
+            </p>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal-lg modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Let me clear your confusion.
+                            <a href="https://www.freepnglogos.com/pics/smiley" title="Image from freepnglogos.com"><img
+                                    src="https://www.freepnglogos.com/uploads/smiley-png/thumbs-smiley-face-emoji-vector-graphic-pixabay-13.png"
+                                    width=25 alt="thumbs smiley face emoji vector graphic pixabay" /></a>
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="font-size: 20;">
+                        <p>This is how you can use our UI.</p>
+                        <ol>
+                            <li>Click on the choose button above and select the picture you want to enhance.</li>
+                            <li>After selecting you will see the picture below it.</li>
+                            <li>You will see two buttons.</li>
+                            <li>Click on the Start processing button and let the button do its magic!!!</li>
+                            <li>After the processing is done, it will alert it to you.</li>
+                            <li>Once you click on OK, the download button will be enabled.</li>
+                            <li>When you click the download button, it will download your file.</li>
+                            <li>And there you go! Isn't it easy?</li>
+                        </ol>
+                        <p>Now you can close this tab and proceed.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="modal-understood-button"
+                            data-bs-dismiss="modal">Understood</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+{% endblock %}
